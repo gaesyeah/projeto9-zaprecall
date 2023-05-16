@@ -1,12 +1,12 @@
-import cards from './cards';
-import Card from './Card';
+import cards from './card/cards';
+import Card from './card/Card';
 
 import logo from '../../assets/logo.png'
 
 function Play() {
     return (
         <div className='play'>
-            <div>
+            <div className='logo'>
                 <img src={logo} alt='logo' />
                 <h2>ZapRecall</h2>
             </div>
@@ -15,7 +15,7 @@ function Play() {
                     map((card, index) => <Card card={card} index={index} key={card.id}/>)
                 }
             </ul>
-            <div>
+            <div className='result'>
                 <p>0/4 CONCLUÍDOS</p>
             </div>
         </div>

@@ -58,18 +58,18 @@ body{
     flex-direction: column;
     align-items: center;
 }
-.play div:nth-child(1){
+.logo{
     display: flex;
     justify-content: center;
     margin-top: 50px;
     margin-bottom: 54px;
 }
-.play div:nth-child(1) img{
+.logo img{
     height: 60px;
     width: 52px;
     margin-right: 17px;
 }
-.play div:nth-child(1) h2{
+.logo h2{
     font-family: 'Righteous', cursive;
     font-weight: 400;
     font-size: 36px;
@@ -87,12 +87,10 @@ body{
     margin-bottom: 46px;
 }
 li{
+    position: relative;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     display: flex;
-}
-li span{
-    display: inline-block;
 }
 li p{
     color: #333333;
@@ -117,7 +115,7 @@ li img{
 .stage0 img{
     margin-top: 20px;
     margin-left: 163px;
-    width: 20px;
+    width: auto;
     height: 23px;
 }
 /*----------*/
@@ -135,30 +133,78 @@ li img{
 }
 .stage1 img{
     position: absolute;
-    margin-left: 264px;
-    margin-top: 112px;
+    margin-left: 254px;
+    margin-top: 105px;
 }
 /*----------*/
 .stage2{
+    display: flex;
+    flex-direction: column;
     width: 300px;
-    height: 131px;
     background: #FFFFD5;
 }
 .stage2 p{
+    width: 270px;
+    margin-bottom: 22px;
     margin-top: 18px;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
 }
+.buttonContainer{
+    display: flex;
+    bottom: 0;
+    margin-left: 13px;
+    margin-bottom: 10px;
+    column-gap: 8px;
+}
+.buttonContainer button {
+    font-family: 'Recursive', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+
+    cursor: pointer;
+    width: 85.17px;
+    height: 37.17px;
+    border-radius: 5px;
+    border: none;
+}
+.buttonContainer button:nth-child(1){
+    background-color: #FF3030;
+}
+.buttonContainer button:nth-child(2){
+    background-color: #FF922E;
+}
+.buttonContainer button:nth-child(3){
+    background-color: #2FBE34;
+}
+/*----------*/
+.cursorDefault {
+    cursor: default;
+}
+.answer {
+    text-decoration-line: line-through;
+}
+.erro{
+    color: #FF3030;
+}
+.quase{
+    color: #FF922E;
+}
+.certo{
+    color: #2FBE34;;
+}
 /*--------------------*/
-.play div:nth-child(3){
+.result{
     width: 100%;
     height: 70px;
     background: #FFFFFF;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
 }
-.play div:nth-child(3) p{
+.result p{
     display: flex;
     justify-content: center;
     margin-top: 24px;
