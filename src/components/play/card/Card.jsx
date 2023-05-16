@@ -8,8 +8,8 @@ import erro from '../../../assets/icone_erro.png'
 function Card({card, index, arrAnswer, setArrAnswer}) {
 
     const [playStage, setPlayStage] = useState(0); //variavel para verificar se o usuario começou a jogar/respondeu/não respondeu
-    const [answerIcon, setAnswerIcon] = useState(''); //variavel para alterar o icone após o usuario responder, baseado na resposta
-    const [answerText, setAnswerText] = useState(undefined) //variavel para alterar o css do "pergunta x" após o usuario responder, baseado na resposta
+    const [answerIcon, setAnswerIcon] = useState(undefined); //variavel para alterar o icone após o usuario responder, baseado na resposta
+    const [answerTextClass, setAnswerTextClass] = useState(undefined) //variavel para alterar o css do "pergunta x" após o usuario responder, baseado na resposta
 
     //altera a classe da tag <li> com base na variavel playStage
     function classStage() {
@@ -59,22 +59,22 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
         const text = event.target.textContent;
         if (text === 'Não lembrei'){
             setAnswerIcon(erro);
-            setAnswerText('answer erro');
+            setAnswerTextClass('answer erro');
             setArrAnswer([...arrAnswer,erro]);
         }else if (text === 'Quase não lembrei'){
             setAnswerIcon(quase);
-            setAnswerText('answer quase');
+            setAnswerTextClass('answer quase');
             setArrAnswer([...arrAnswer,quase]);
         } else {
             setAnswerIcon(certo);
-            setAnswerText('answer certo');
+            setAnswerTextClass('answer certo');
             setArrAnswer([...arrAnswer,certo]);
         }
     }
 
     return(
         <li className={classStage()}>
-            <p className={answerText}>
+            <p className={answerTextClass}>
                 {pStage()}
             </p>
             <img

@@ -8,12 +8,12 @@ function App() {
 
   return (
     <>
-        {!changeScreen 
-          ? 
-            <Start setChangeScreen={setChangeScreen}/> 
-          :
-            <Play/>
-        }
+      {!changeScreen
+        ?
+        <Start setChangeScreen={setChangeScreen} />
+        :
+        <Play />
+      }
     </>
   )
 }

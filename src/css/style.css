@@ -84,7 +84,7 @@ body{
     display: flex;
     flex-direction: column;
     row-gap: 20px;
-    margin-bottom: 92px;
+    margin-bottom: 25px;
 }
 li{
     position: relative;
@@ -203,9 +203,7 @@ li img{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: fixed;
     bottom: 0;
-    z-index: 1;
     width: 100%;
     height: 70px;
     background: #FFFFFF;
@@ -218,8 +216,30 @@ li img{
     line-height: 22px;
     color: #333333;
 }
-.result div {
+.resultIcons {
     display: flex;
     margin-top: 6px;
     column-gap: 5px;
+}
+.resultMessage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.resultMessage span{
+    font-size: 23px;
+}
+.resultMessage p {
+    font-family: 'Recursive', sans-serif;
+    color: #333333;
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 14px;
+    font-weight: 400;
+}
+.resultMessage p:nth-child(1) {
+    font-weight: 700;
+}
+.finalHeight{
+    height: 171px;
 }
