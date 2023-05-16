@@ -1,4 +1,4 @@
-import cards from '../../cards';
+import cards from './cards';
 import Card from './Card';
 
 import logo from '../../assets/logo.png'
@@ -11,7 +11,9 @@ function Play() {
                 <h2>ZapRecall</h2>
             </div>
             <ul>
-                {cards.map((card, index) => <Card card={card} index={index} key={card.id}/>)}
+                {cards.sort(() => Math.random() - 0.5).
+                    map((card, index) => <Card card={card} index={index} key={card.id}/>)
+                }
             </ul>
             <div>
                 <p>0/4 CONCLUÍDOS</p>
