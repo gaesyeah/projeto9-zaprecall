@@ -8,5 +8,6 @@ const cards = [
 	{ id:7, question: "Usamos props para __", answer: "Passar diferentes informações para componentes" },
 	{ id:8, question: "Usamos estado (state) para __", answer: "Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente" }
 ]
+const randomizedCards = cards.sort(() => Math.random() - 0.5);
 
-export default cards
+export default randomizedCards;

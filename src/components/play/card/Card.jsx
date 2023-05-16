@@ -5,7 +5,7 @@ import certo from '../../../assets/icone_certo.png'
 import quase from '../../../assets/icone_quase.png'
 import erro from '../../../assets/icone_erro.png'
 
-function Card({card,index}) {
+function Card({card, index, arrAnswer, setArrAnswer}) {
 
     const [playStage, setPlayStage] = useState(0); //variavel para verificar se o usuario começou a jogar/respondeu/não respondeu
     const [answerIcon, setAnswerIcon] = useState(''); //variavel para alterar o icone após o usuario responder, baseado na resposta
@@ -60,12 +60,15 @@ function Card({card,index}) {
         if (text === 'Não lembrei'){
             setAnswerIcon(erro);
             setAnswerText('answer erro');
+            setArrAnswer([...arrAnswer,erro]);
         }else if (text === 'Quase não lembrei'){
             setAnswerIcon(quase);
             setAnswerText('answer quase');
+            setArrAnswer([...arrAnswer,quase]);
         } else {
             setAnswerIcon(certo);
             setAnswerText('answer certo');
+            setArrAnswer([...arrAnswer,certo]);
         }
     }
 
