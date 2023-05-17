@@ -21,7 +21,7 @@ const SCcard = styled.li`
         width: ${({stage}) => (stage === 1 || stage === 2) ? '270px' : 'auto'};
     }
     img{
-        cursor: ${({stage}) => (stage === 'answer') ? 'default' : 'pointer'};
+        cursor: ${({stage}) => (stage === 3) ? 'default' : 'pointer'};
         position: ${({stage}) => (stage === 1) ? 'absolute' : 'static'};
         margin-top: ${({stage}) => (stage === 2) ? undefined : ((stage === 1) ? '105px' : '20px')};
         margin-left: ${({stage}) => (stage === 2) ? undefined : ((stage === 1) ? '254px' : '163px')};

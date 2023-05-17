@@ -13,36 +13,27 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
     const [answerIcon, setAnswerIcon] = useState(undefined); //variavel para alterar o icone após o usuario responder, baseado na resposta
     const [answerText, setAnswerText] = useState('#333333') //variavel para alterar o css do "pergunta x" após o usuario responder, baseado na resposta
 
-    //altera o conteudo da tag <p> com base na variavel playStage
-    function pStage() {
-        switch(playStage) {
-            case 1:
-                return card.question;
-                break;
-            case 2: 
-                return card.answer;
-                break;
-            default:
-                return `Pergunta ${index+1}`;
+    const [questionIcon, setQuestionIcon] = useState(setaPlay);
+    const [questionP, setQuestionP] = useState(`Pergunta ${index+1}`);
+
+    function changePlayStage(){
+        const count = playStage + 1;
+        setPlayStage(count);
+
+        if (count === 1){
+            setQuestionP(card.question);
+            setQuestionIcon(setaVirar);
+        } else if (count === 2){
+            setQuestionP(card.answer);
+            setQuestionIcon(undefined);
         }
-    }
-    //altera o conteudo da imagem, da tag <img> com base na variavel playStage
-    function srcStage() {
-        switch(playStage) {
-            case 1:
-                return setaVirar;
-                break;
-            case 2: 
-                return undefined;
-                break;
-            default:
-                return setaPlay;
-        } 
     }
 
     function userAnswer(event) {
         //altera a variavel para que todos os switch case entrem no default, voltando para o estado inicial da <li>, que antes era 0
-        setPlayStage('answer');
+        setPlayStage(playStage + 1);
+        setQuestionP(`Pergunta ${index+1}`);
+        setQuestionIcon(setaPlay);
 
         //altera o icone baseado na resposta
         const text = event.target.textContent;
@@ -63,12 +54,10 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
 
     return(
         <SCcard stage={playStage} answer={answerText}>
-            <p>
-                {pStage()}
-            </p>
+            <p>{questionP}</p>
             <img
-                onClick={playStage === 'answer' ? undefined : (() => setPlayStage(playStage+1))}
-                src={playStage === 'answer' ? answerIcon : srcStage()}
+                onClick={playStage === 3 ? undefined : (changePlayStage)}
+                src={playStage === 3 ? answerIcon : questionIcon}
                 alt={playStage === 2 ? undefined : 'icon'}
             />
             {playStage === 2 && (
