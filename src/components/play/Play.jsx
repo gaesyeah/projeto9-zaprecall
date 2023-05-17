@@ -39,8 +39,13 @@ function Play() {
                 {allAnswered()
                     &&
                     <div>
-                        {arrAnswer.includes(erro)
+                        {!arrAnswer.includes(erro)
                             ?
+                            <>
+                                <p><span>🥳</span> Parabéns!</p>
+                                <p>Você não esqueceu de nenhum flashcard!</p>
+                            </>
+                            :
                             <>
                                 <p><span>😥</span> Putz...</p>
                                 <p>
@@ -50,11 +55,6 @@ function Play() {
                                     : 
                                     'Você não lembrou de nenhum, estude mais!'}
                                 </p>
-                            </>
-                            :
-                            <>
-                                <p><span>🥳</span> Parabéns!</p>
-                                <p>Você não esqueceu de nenhum flashcard!</p>
                             </>
                         }
                     </div>
