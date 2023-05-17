@@ -88,15 +88,20 @@ li img{
 .stage0{
     width: 300px;
     height: 65px;
+    display: flex;
+    flex-direction: unset;
     background-color: #FFFFFF;
 }
 .stage0 p{
+    width: auto;
     margin-top: 23px;
+    margin-bottom: 0px;
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;
 }
 .stage0 img{
+    position: static;
     margin-top: 20px;
     margin-left: 163px;
     width: auto;
@@ -106,33 +111,48 @@ li img{
 .stage1{
     width: 299px;
     height: 131px;
+    display: flex;
+    flex-direction: unset;
     background-color: #FFFFD5;
 }
 .stage1 p{
+    width: 270px;
     margin-top: 18px;
+    margin-bottom: 0px;
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
 }
 .stage1 img{
     position: absolute;
-    margin-left: 254px;
     margin-top: 105px;
+    margin-left: 254px;
+    width: auto;
+    height: auto;
 }
 /*----------*/
 .stage2{
+    width: 300px;
+    height: auto;
     display: flex;
     flex-direction: column;
-    width: 300px;
     background-color: #FFFFD5;
 }
 .stage2 p{
     width: 270px;
-    margin-bottom: 22px;
     margin-top: 18px;
+    margin-bottom: 22px;
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
+}
+/*ver se é possivel simplesmente botar undefined no jsx do styled component*/
+.stage2 img{
+    position: static;
+    margin-top: 0px;
+    margin-left:  0px;
+    width: 0px;
+    height: 0px;
 }
 /*----------*/
 .cursorDefault {
