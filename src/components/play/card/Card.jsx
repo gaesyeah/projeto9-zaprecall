@@ -11,7 +11,7 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
 
     const [playStage, setPlayStage] = useState(0); //variavel para verificar se o usuario começou a jogar/respondeu/não respondeu
     const [answerIcon, setAnswerIcon] = useState(undefined); //variavel para alterar o icone após o usuario responder, baseado na resposta
-    const [answerText, setAnswerText] = useState(undefined) //variavel para alterar o css do "pergunta x" após o usuario responder, baseado na resposta
+    const [answerText, setAnswerText] = useState('#333333') //variavel para alterar o css do "pergunta x" após o usuario responder, baseado na resposta
 
     //altera o conteudo da tag <p> com base na variavel playStage
     function pStage() {
@@ -48,15 +48,15 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
         const text = event.target.textContent;
         if (text === 'Não lembrei'){
             setAnswerIcon(erro);
-            setAnswerText('erro');
+            setAnswerText('#FF3030');
             setArrAnswer([...arrAnswer,erro]);
         }else if (text === 'Quase não lembrei'){
             setAnswerIcon(quase);
-            setAnswerText('quase');
+            setAnswerText('#FF922E');
             setArrAnswer([...arrAnswer,quase]);
         } else {
             setAnswerIcon(certo);
-            setAnswerText('certo');
+            setAnswerText('#2FBE34');
             setArrAnswer([...arrAnswer,certo]);
         }
     }

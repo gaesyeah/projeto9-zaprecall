@@ -13,8 +13,8 @@ const SCcard = styled.li`
         font-weight: ${({stage}) => (stage === 1 || stage === 2) ? '400' : '700'};
         font-size: ${({stage}) => (stage === 1 || stage === 2) ? '18px' : '16px'};
         line-height: ${({stage}) => (stage === 1 || stage === 2) ? '22px' : '19px'};
-        text-decoration-line: ${({answer}) => (answer ===  undefined) ? 'none' : 'line-through'};
-        color: ${({answer}) => (answer ===  'erro') ? '#FF3030' : ((answer ===  'quase') ? '#FF922E' : ((answer ===  'certo') ? '#2FBE34' : '#333333'))};
+        text-decoration-line: ${({answer}) => (answer ===  '#333333') ? 'none' : 'line-through'};
+        color: ${({answer}) => answer};
         margin-left: 15px;
         margin-top: ${({stage}) => (stage === 1 || stage === 2) ? '18px' : '23px'};
         margin-bottom: ${({stage}) => (stage === 2) ? '22px' : '0px'};
