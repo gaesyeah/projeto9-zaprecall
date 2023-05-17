@@ -9,11 +9,11 @@ import SCcard from './styled';
 function Card({card, index, arrAnswer, setArrAnswer}) {
 
     const [playStage, setPlayStage] = useState(0); //variavel para verificar se o usuario começou a jogar/respondeu/não respondeu
-    const [answerIcon, setAnswerIcon] = useState(undefined); //variavel para alterar o icone após o usuario responder, baseado na resposta
+    const [answerIcon, setAnswerIcon] = useState(undefined); //variavel para alterar o icone da resposta após o usuario responder
     const [answerText, setAnswerText] = useState('#333333') //variavel para alterar o css do "pergunta x" após o usuario responder, baseado na resposta
 
-    const [questionIcon, setQuestionIcon] = useState(setaPlay);
-    const [questionP, setQuestionP] = useState(`Pergunta ${index+1}`);
+    const [questionIcon, setQuestionIcon] = useState(setaPlay); //variavel para alterar o icone dos cards, com base no "estagio" do mesmo
+    const [questionP, setQuestionP] = useState(`Pergunta ${index+1}`); //variavel para alterar o conteudo do texto dos cards, com base no "estagio" do mesmo
 
     function changePlayStage(){
         const count = playStage + 1;

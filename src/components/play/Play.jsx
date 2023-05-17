@@ -11,6 +11,10 @@ function Play() {
     function allAnswered() {
         return arrAnswer.length === randomizedCards.length;
     }
+    //conta a quantidade de erros
+    function wrongAnswers(){
+        return arrAnswer.filter(icon => (icon === erro) && icon).length;
+    }
 
     const [arrAnswer, setArrAnswer] = useState([]); //variavel que guarda a quantidade de vezes que o usuario jogou, e se acertou, errou ou quase acertou
 
@@ -39,7 +43,13 @@ function Play() {
                             ?
                             <>
                                 <p><span>😥</span> Putz...</p>
-                                <p>Ainda faltam alguns... Mas não desanime!</p>
+                                <p>
+                                {wrongAnswers() !== randomizedCards.length 
+                                    ?
+                                    `Você não lembrou de ${wrongAnswers()}... Mas não desanime!` 
+                                    : 
+                                    'Você não lembrou de nenhum, estude mais!'}
+                                </p>
                             </>
                             :
                             <>
