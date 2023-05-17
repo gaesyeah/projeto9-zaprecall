@@ -43,7 +43,7 @@ export const SCscore = styled.div`
     bottom: 0;
     z-index: 1;
     width: 100%;
-    height: ${({all}) => all() ? '171px' : '70px'};
+    height: ${({all}) => all ? '171px' : '70px'};
     background-color: #FFFFFF;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
     div:nth-child(1){

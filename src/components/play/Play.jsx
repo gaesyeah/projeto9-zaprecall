@@ -1,12 +1,9 @@
+import { useState } from 'react';
 import randomizedCards from '../play/card/cards';
-import Card from '../play/card/Card'
-
-import { SCplay, SCscore } from './styled';
-
 import logo from '../../assets/logo.png'
 import erro from '../../assets/icone_erro.png'
-
-import { useState } from 'react';
+import { SCplay, SCscore } from './styled';
+import Card from '../play/card/Card'
 
 function Play() {
 
@@ -34,7 +31,7 @@ function Play() {
                     />
                 )}
             </ul>
-            <SCscore all={allAnswered}>
+            <SCscore all={allAnswered()}>
                 {allAnswered()
                     &&
                     <div>

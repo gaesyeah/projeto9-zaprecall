@@ -4,7 +4,6 @@ import setaVirar from '../../../assets/seta_virar.png'
 import certo from '../../../assets/icone_certo.png'
 import quase from '../../../assets/icone_quase.png'
 import erro from '../../../assets/icone_erro.png'
-
 import SCcard from './styled';
 
 function Card({card, index, arrAnswer, setArrAnswer}) {
@@ -33,7 +32,6 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
         //altera a variavel para que todos os switch case entrem no default, voltando para o estado inicial da <li>, que antes era 0
         setPlayStage(playStage + 1);
         setQuestionP(`Pergunta ${index+1}`);
-        setQuestionIcon(setaPlay);
 
         //altera o icone baseado na resposta
         const text = event.target.textContent;
@@ -56,7 +54,7 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
         <SCcard stage={playStage} answer={answerText}>
             <p>{questionP}</p>
             <img
-                onClick={playStage === 3 ? undefined : (changePlayStage)}
+                onClick={playStage === 3 ? undefined : changePlayStage}
                 src={playStage === 3 ? answerIcon : questionIcon}
                 alt={playStage === 2 ? undefined : 'icon'}
             />

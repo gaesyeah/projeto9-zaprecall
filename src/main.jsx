@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import SCreset from './styledReset.jsx'
 import App from './components/App.jsx'
-import Reset from './styledReset.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Reset />
+    <SCreset />
     <App />
   </React.StrictMode>,
 )
