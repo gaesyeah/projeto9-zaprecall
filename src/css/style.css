@@ -33,13 +33,13 @@ body{
     display: flex;
     align-items: center;
 }
-/*--------------------*/
 .play ul{
     display: flex;
     flex-direction: column;
     row-gap: 20px;
     margin-bottom: 192px;
 }
+/*--------------------*/
 li{
     position: relative;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
@@ -54,58 +54,7 @@ li p{
 li img{
     cursor: pointer;
 }
-/*----------*/
-.stage0{
-    width: 300px;
-    height: 65px;
-    background-color: #FFFFFF;
-}
-.stage0 p{
-    margin-top: 23px;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 19px;
-}
-.stage0 img{
-    margin-top: 20px;
-    margin-left: 163px;
-    width: auto;
-    height: 23px;
-}
-/*----------*/
-.stage1{
-    width: 299px;
-    height: 131px;
-    background: #FFFFD5;
-}
-.stage1 p{
-    margin-top: 18px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-}
-.stage1 img{
-    position: absolute;
-    margin-left: 254px;
-    margin-top: 105px;
-}
-/*----------*/
-.stage2{
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    background: #FFFFD5;
-}
-.stage2 p{
-    width: 270px;
-    margin-bottom: 22px;
-    margin-top: 18px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-}
+
 .buttonContainer{
     display: flex;
     bottom: 0;
@@ -136,6 +85,56 @@ li img{
     background-color: #2FBE34;
 }
 /*----------*/
+.stage0{
+    width: 300px;
+    height: 65px;
+    background-color: #FFFFFF;
+}
+.stage0 p{
+    margin-top: 23px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+}
+.stage0 img{
+    margin-top: 20px;
+    margin-left: 163px;
+    width: auto;
+    height: 23px;
+}
+/*----------*/
+.stage1{
+    width: 299px;
+    height: 131px;
+    background-color: #FFFFD5;
+}
+.stage1 p{
+    margin-top: 18px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+}
+.stage1 img{
+    position: absolute;
+    margin-left: 254px;
+    margin-top: 105px;
+}
+/*----------*/
+.stage2{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    background-color: #FFFFD5;
+}
+.stage2 p{
+    width: 270px;
+    margin-bottom: 22px;
+    margin-top: 18px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+}
+/*----------*/
 .cursorDefault {
     cursor: default;
 }
@@ -162,7 +161,7 @@ li img{
     z-index: 1;
     width: 100%;
     height: 70px;
-    background: #FFFFFF;
+    background-color: #FFFFFF;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
 }
 .result p{
