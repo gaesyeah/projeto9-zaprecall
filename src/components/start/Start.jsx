@@ -1,12 +1,13 @@
-import logo from '../assets/logo.png'
+import logo from '../../assets/logo.png'
+import SCstart from './syled';
 
 function Start({setChangeScreen}) {
     return(
-        <div className='start'>
+        <SCstart>
             <img src={logo} alt='logo' ></img>
             <h1>ZapRecall</h1>
             <button onClick={() => setChangeScreen(true)}>Iniciar Recall!</button>
-        </div>
+        </SCstart>
     );
 }
 

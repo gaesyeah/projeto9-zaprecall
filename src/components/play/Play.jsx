@@ -1,5 +1,5 @@
-import randomizedCards from './card/cards';
-import Card from './card/Card';
+import randomizedCards from '../play/card/cards';
+import Card from '../play/card/Card'
 
 import logo from '../../assets/logo.png'
 import erro from '../../assets/icone_erro.png'
