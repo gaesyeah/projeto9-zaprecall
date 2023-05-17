@@ -69,6 +69,7 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
             <img
                 onClick={playStage === 'answer' ? undefined : (() => setPlayStage(playStage+1))}
                 src={playStage === 'answer' ? answerIcon : srcStage()}
+                alt={playStage === 2 ? undefined : 'icon'}
             />
             {playStage === 2 && (
                 <div>

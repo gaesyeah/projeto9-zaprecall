@@ -1,6 +1,8 @@
 import randomizedCards from '../play/card/cards';
 import Card from '../play/card/Card'
 
+import { SCplay, SCscore } from './styled';
+
 import logo from '../../assets/logo.png'
 import erro from '../../assets/icone_erro.png'
 
@@ -16,8 +18,8 @@ function Play() {
     const [arrAnswer, setArrAnswer] = useState([]); //variavel que guarda a quantidade de vezes que o usuario jogou, e se acertou, errou ou quase acertou
 
     return (
-        <div className='play'>
-            <div className='logo'>
+        <SCplay>
+            <div>
                 <img src={logo} alt='logo' />
                 <h2>ZapRecall</h2>
             </div>
@@ -32,10 +34,10 @@ function Play() {
                     />
                 )}
             </ul>
-            <div className={`result ${allAnswered() && 'finalHeight'}`}>
+            <SCscore all={allAnswered}>
                 {allAnswered()
                     &&
-                    <div className='resultMessage'>
+                    <div>
                         {arrAnswer.includes(erro)
                             ?
                             <>
@@ -51,11 +53,11 @@ function Play() {
                     </div>
                 }
                 <p>{arrAnswer.length}/{randomizedCards.length} CONCLUÍDOS</p>
-                <div className='resultIcons'>
+                <div>
                     {arrAnswer.map((icon, i) => <img src={icon} key={i + icon} />)}
                 </div>
-            </div>
-        </div>
+            </SCscore>
+        </SCplay>
     );
 }
 
