@@ -5,29 +5,28 @@ const SCcard = styled.li`
     border-radius: 5px;
     display: flex;
     width: 300px;
-    height: ${({playStage}) => (playStage === 1) ? '131px' : ((playStage === 2) ? 'auto' : '65px')};
-    flex-direction: ${({playStage}) => (playStage === 2) ? 'column' : 'unset'};
-    background-color: ${({playStage}) => (playStage === 1 || playStage === 2) ? '#FFFFD5' : '#FFFFFF'};
+    height: ${({stage}) => (stage === 1) ? '131px' : ((stage === 2) ? 'auto' : '65px')};
+    flex-direction: ${({stage}) => (stage === 2) ? 'column' : 'unset'};
+    background-color: ${({stage}) => (stage === 1 || stage === 2) ? '#FFFFD5' : '#FFFFFF'};
     p{
         font-family: 'Recursive', sans-serif;
-        color: ${({answerText}) => (answerText ===  'erro') ? '#FF3030' : ((answerText ===  'quase') ? '#FF922E' : ((answerText ===  'certo') ? '#2FBE34' : '#333333'))};
-        text-decoration-line: ${({answerText}) => (answerText ===  undefined) ? 'none' : 'line-through'};
-        font-weight: ${({playStage}) => (playStage === 1 || playStage === 2) ? '400' : '700'};
-        font-size: ${({playStage}) => (playStage === 1 || playStage === 2) ? '18px' : '16px'};
-        line-height: ${({playStage}) => (playStage === 1 || playStage === 2) ? '22px' : '19px'};
+        font-weight: ${({stage}) => (stage === 1 || stage === 2) ? '400' : '700'};
+        font-size: ${({stage}) => (stage === 1 || stage === 2) ? '18px' : '16px'};
+        line-height: ${({stage}) => (stage === 1 || stage === 2) ? '22px' : '19px'};
+        text-decoration-line: ${({answer}) => (answer ===  undefined) ? 'none' : 'line-through'};
+        color: ${({answer}) => (answer ===  'erro') ? '#FF3030' : ((answer ===  'quase') ? '#FF922E' : ((answer ===  'certo') ? '#2FBE34' : '#333333'))};
         margin-left: 15px;
-        margin-top: ${({playStage}) => (playStage === 1 || playStage === 2) ? '18px' : '23px'};
-        margin-bottom: ${({playStage}) => (playStage === 2) ? '22px' : '0px'};
-        width: ${({playStage}) => (playStage === 1 || playStage === 2) ? '270px' : 'auto'};
+        margin-top: ${({stage}) => (stage === 1 || stage === 2) ? '18px' : '23px'};
+        margin-bottom: ${({stage}) => (stage === 2) ? '22px' : '0px'};
+        width: ${({stage}) => (stage === 1 || stage === 2) ? '270px' : 'auto'};
     }
     img{
-        cursor: ${({playStage}) === 'answer' ? 'pointer' : 'default'} ;
-        position: ${({playStage}) => (playStage === 1) ? 'absolute' : 'static'};
-        margin-top: ${({playStage}) => (playStage === 0) ? '20px' : ((playStage === 1) ? '105px' : undefined)};
-        margin-left: ${({playStage}) => (playStage === 0) ? '163px' : ((playStage === 1) ? '254px;' : undefined)};
-        height: ${({playStage}) => (playStage === 0) ? '23px' : ((playStage === 1) ? 'auto' : undefined)};
-        width: ${({playStage}) => (playStage === 0 || playStage === 1) ? 'auto' : undefined};
-
+        cursor: ${({stage}) => (stage === 'answer') ? 'default' : 'pointer'};
+        position: ${({stage}) => (stage === 1) ? 'absolute' : 'static'};
+        margin-top: ${({stage}) => (stage === 2) ? undefined : ((stage === 1) ? '105px' : '20px')};
+        margin-left: ${({stage}) => (stage === 2) ? undefined : ((stage === 1) ? '254px' : '163px')};
+        width: ${({stage}) => (stage === 2) ? undefined : 'auto'};
+        height: ${({stage}) => (stage === 2) ? undefined : ((stage === 1) ? 'auto' : '23px')};
     }
     div{
         display: flex;

@@ -5,25 +5,14 @@ import certo from '../../../assets/icone_certo.png'
 import quase from '../../../assets/icone_quase.png'
 import erro from '../../../assets/icone_erro.png'
 
+import SCcard from './styled';
+
 function Card({card, index, arrAnswer, setArrAnswer}) {
 
     const [playStage, setPlayStage] = useState(0); //variavel para verificar se o usuario começou a jogar/respondeu/não respondeu
     const [answerIcon, setAnswerIcon] = useState(undefined); //variavel para alterar o icone após o usuario responder, baseado na resposta
     const [answerText, setAnswerText] = useState(undefined) //variavel para alterar o css do "pergunta x" após o usuario responder, baseado na resposta
 
-    //altera a classe da tag <li> com base na variavel playStage
-    function classStage() {
-        switch(playStage) {
-            case 1:
-                return 'stage1';
-                break;
-            case 2: 
-                return 'stage2';
-                break;
-            default:
-                return 'stage0';
-        } 
-    }
     //altera o conteudo da tag <p> com base na variavel playStage
     function pStage() {
         switch(playStage) {
@@ -59,28 +48,27 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
         const text = event.target.textContent;
         if (text === 'Não lembrei'){
             setAnswerIcon(erro);
-            setAnswerText('answer erro');
+            setAnswerText('erro');
             setArrAnswer([...arrAnswer,erro]);
         }else if (text === 'Quase não lembrei'){
             setAnswerIcon(quase);
-            setAnswerText('answer quase');
+            setAnswerText('quase');
             setArrAnswer([...arrAnswer,quase]);
         } else {
             setAnswerIcon(certo);
-            setAnswerText('answer certo');
+            setAnswerText('certo');
             setArrAnswer([...arrAnswer,certo]);
         }
     }
 
     return(
-        <li className={classStage()}>
-            <p className={answerText}>
+        <SCcard stage={playStage} answer={answerText}>
+            <p>
                 {pStage()}
             </p>
             <img
                 onClick={playStage === 'answer' ? undefined : (() => setPlayStage(playStage+1))}
                 src={playStage === 'answer' ? answerIcon : srcStage()}
-                className={playStage === 'answer' ? 'cursorDefault' : undefined} 
             />
             {playStage === 2 && (
                 <div>
@@ -89,7 +77,7 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
                     <button onClick={userAnswer}>Zap!</button>
                 </div>
             )}
-        </li>
+        </SCcard>
     );
 }
 
