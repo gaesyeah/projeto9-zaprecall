@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './components/App.jsx'
-import Reset from './styleReset.jsx'
+import Reset from './styledReset.jsx'
 
 import './css/style.css'
 

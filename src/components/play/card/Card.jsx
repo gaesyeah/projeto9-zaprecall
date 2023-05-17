@@ -9,7 +9,7 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
 
     const [playStage, setPlayStage] = useState(0); //variavel para verificar se o usuario começou a jogar/respondeu/não respondeu
     const [answerIcon, setAnswerIcon] = useState(undefined); //variavel para alterar o icone após o usuario responder, baseado na resposta
-    const [answerTextClass, setAnswerTextClass] = useState(undefined) //variavel para alterar o css do "pergunta x" após o usuario responder, baseado na resposta
+    const [answerText, setAnswerText] = useState(undefined) //variavel para alterar o css do "pergunta x" após o usuario responder, baseado na resposta
 
     //altera a classe da tag <li> com base na variavel playStage
     function classStage() {
@@ -59,22 +59,22 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
         const text = event.target.textContent;
         if (text === 'Não lembrei'){
             setAnswerIcon(erro);
-            setAnswerTextClass('answer erro');
+            setAnswerText('answer erro');
             setArrAnswer([...arrAnswer,erro]);
         }else if (text === 'Quase não lembrei'){
             setAnswerIcon(quase);
-            setAnswerTextClass('answer quase');
+            setAnswerText('answer quase');
             setArrAnswer([...arrAnswer,quase]);
         } else {
             setAnswerIcon(certo);
-            setAnswerTextClass('answer certo');
+            setAnswerText('answer certo');
             setArrAnswer([...arrAnswer,certo]);
         }
     }
 
     return(
         <li className={classStage()}>
-            <p className={answerTextClass}>
+            <p className={answerText}>
                 {pStage()}
             </p>
             <img
@@ -83,7 +83,7 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
                 className={playStage === 'answer' ? 'cursorDefault' : undefined} 
             />
             {playStage === 2 && (
-                <div className='buttonContainer'>
+                <div>
                     <button onClick={userAnswer}>Não lembrei</button>
                     <button onClick={userAnswer}>Quase não lembrei</button>
                     <button onClick={userAnswer}>Zap!</button>

@@ -41,10 +41,10 @@ body{
 }
 /*--------------------*/
 li{
-    position: relative;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     display: flex;
+    width: 300px;
 }
 li p{
     color: #333333;
@@ -55,14 +55,14 @@ li img{
     cursor: pointer;
 }
 
-.buttonContainer{
+li div{
     display: flex;
     bottom: 0;
     margin-left: 13px;
     margin-bottom: 10px;
     column-gap: 8px;
 }
-.buttonContainer button {
+li div button {
     font-family: 'Recursive', sans-serif;
     font-weight: 400;
     font-size: 12px;
@@ -75,20 +75,18 @@ li img{
     border-radius: 5px;
     border: none;
 }
-.buttonContainer button:nth-child(1){
+li div button:nth-child(1){
     background-color: #FF3030;
 }
-.buttonContainer button:nth-child(2){
+li div button:nth-child(2){
     background-color: #FF922E;
 }
-.buttonContainer button:nth-child(3){
+li div button:nth-child(3){
     background-color: #2FBE34;
 }
 /*----------*/
 .stage0{
-    width: 300px;
     height: 65px;
-    display: flex;
     flex-direction: unset;
     background-color: #FFFFFF;
 }
@@ -109,9 +107,7 @@ li img{
 }
 /*----------*/
 .stage1{
-    width: 299px;
     height: 131px;
-    display: flex;
     flex-direction: unset;
     background-color: #FFFFD5;
 }
@@ -132,9 +128,7 @@ li img{
 }
 /*----------*/
 .stage2{
-    width: 300px;
     height: auto;
-    display: flex;
     flex-direction: column;
     background-color: #FFFFD5;
 }
