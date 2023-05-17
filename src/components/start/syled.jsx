@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 
 const SCstart = styled.div`
+    background-color: #FB6B6B;
     width: 100%;
     height: 100%;
     position: absolute;

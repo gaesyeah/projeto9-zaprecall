@@ -5,7 +5,6 @@ const Reset = createGlobalStyle`
     v2.0 | 20110126
     License: none (public domain)
     */
-
     html, body, div, span, applet, object, iframe,
     h1, h2, h3, h4, h5, h6, p, blockquote, pre,
     a, abbr, acronym, address, big, cite, code,
@@ -48,6 +47,11 @@ const Reset = createGlobalStyle`
     table {
         border-collapse: collapse;
         border-spacing: 0;
+    }
+    /* alteração no reset.css adicionada por mim */
+    *{
+        box-sizing: border-box;
+        font-style: normal;
     }
 `;
 

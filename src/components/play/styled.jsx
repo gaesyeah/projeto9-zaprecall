@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 
 export const SCplay = styled.div`
+    background-color: #FB6B6B;
     display: flex;
     flex-direction: column;
     align-items: center;
