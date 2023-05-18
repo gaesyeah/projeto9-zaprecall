@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import randomizedCards from '../play/card/cards';
+import { useState } from 'react'
+import randomizedCards from '../play/card/cards'
 import logo from '../../assets/logo.png'
 import erro from '../../assets/icone_erro.png'
-import { SCplay, SCscore } from './styled';
+import { SCplay, SCscore } from './styled'
 import Card from '../play/card/Card'
 
 function Play() {
@@ -61,7 +61,9 @@ function Play() {
                 }
                 <p>{arrAnswer.length}/{randomizedCards.length} CONCLUÍDOS</p>
                 <div>
-                    {arrAnswer.map((icon, i) => <img src={icon} key={i + icon} />)}
+                    {arrAnswer.map((icon, i) => 
+                        <img src={icon} key={i + icon} />
+                    )}
                 </div>
             </SCscore>
         </SCplay>
