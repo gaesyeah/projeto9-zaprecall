@@ -74,12 +74,15 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
             <p data-test="flashcard-text">
                 {cardText}
             </p>
-            <img
-                data-test={stageDataTest()}
-                onClick={playStage === 3 ? undefined : changePlayStage}
-                src={playStage === 3 ? answerIcon : questionIcon}
-                alt={playStage === 2 ? undefined : 'icon'}
-            />
+            {playStage !== 2
+                &&
+                <img
+                    data-test={stageDataTest()}
+                    onClick={playStage === 3 ? undefined : changePlayStage}
+                    src={playStage === 3 ? answerIcon : questionIcon}
+                    alt='icon'
+                />
+            }
             {playStage === 2 && (
                 <div>
                     <button
