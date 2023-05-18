@@ -3,7 +3,7 @@ import quase from '../../../assets/icone_quase.png'
 
 function ScoreList({image}) {
 
-    function teste(){
+    function scoreDataTest(){
         if (image === erro){
             return 'no-icon';
         } else if (image === quase){
@@ -15,7 +15,7 @@ function ScoreList({image}) {
 
     return (
             <img 
-                data-test={teste()}
+                data-test={scoreDataTest()}
                 src={image} 
                 alt='score'
             />
