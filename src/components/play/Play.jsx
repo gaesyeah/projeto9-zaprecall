@@ -4,6 +4,7 @@ import logo from '../../assets/logo.png'
 import erro from '../../assets/icone_erro.png'
 import { SCplay, SCscore } from './styled'
 import Card from '../play/card/Card'
+import ScoreList from './score/ScoreList'
 
 function Play() {
 
@@ -62,7 +63,7 @@ function Play() {
                 <p>{arrAnswer.length}/{randomizedCards.length} CONCLUÍDOS</p>
                 <div>
                     {arrAnswer.map((icon, i) => 
-                        <img src={icon} key={i + icon} />
+                        <ScoreList image={icon} key={i + icon} />
                     )}
                 </div>
             </SCscore>
