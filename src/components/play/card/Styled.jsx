@@ -22,7 +22,7 @@ const SCcard = styled.li`
     }
     img{
         cursor: ${({stage}) => (stage === 3) ? 'default' : 'pointer'};
-        position: ${({stage}) => (stage === 1) ? 'absolute' : 'static'};
+        position: ${({stage}) => (stage === 1) ? 'absolute' : undefined};
         margin-top: ${({stage}) => (stage === 2) ? undefined : ((stage === 1) ? '105px' : '20px')};
         margin-left: ${({stage}) => (stage === 2) ? undefined : ((stage === 1) ? '254px' : '163px')};
         width: ${({stage}) => (stage === 2) ? undefined : 'auto'};
