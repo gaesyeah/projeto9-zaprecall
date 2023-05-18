@@ -67,8 +67,14 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
     }
 
     return(
-        <SCcard stage={playStage} color={textColor}>
-            <p>{questionText}</p>
+        <SCcard 
+            data-test="flashcard" 
+            stage={playStage} 
+            color={textColor}
+        >
+            <p data-test="flashcard-text">
+                {questionText}
+            </p>
             <img
                 data-test={stageDataTest()}
                 onClick={playStage === 3 ? undefined : changePlayStage}
@@ -77,9 +83,18 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
             />
             {playStage === 2 && (
                 <div>
-                    <button onClick={userAnswer}>Não lembrei</button>
-                    <button onClick={userAnswer}>Quase não lembrei</button>
-                    <button onClick={userAnswer}>Zap!</button>
+                    <button 
+                        onClick={userAnswer} 
+                        data-test="no-btn"
+                    >Não lembrei</button>
+                    <button
+                        onClick={userAnswer}
+                        data-test="partial-btn"
+                    >Quase não lembrei</button>
+                    <button 
+                        onClick={userAnswer}
+                        data-test="zap-btn"
+                    >Zap!</button>
                 </div>
             )}
         </SCcard>

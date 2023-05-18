@@ -36,10 +36,10 @@ function Play() {
                     />
                 )}
             </ul>
-            <SCscore all={allAnswered()}>
+            <SCscore all={allAnswered()} data-test="footer">
                 {allAnswered()
                     &&
-                    <div>
+                    <div data-test="finish-text">
                         {!arrAnswer.includes(erro)
                             ?
                             <>

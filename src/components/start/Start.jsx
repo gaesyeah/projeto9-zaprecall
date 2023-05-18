@@ -6,7 +6,10 @@ function Start({setChangeScreen}) {
         <SCstart>
             <img src={logo} alt='logo' ></img>
             <h1>ZapRecall</h1>
-            <button onClick={() => setChangeScreen(true)}>Iniciar Recall!</button>
+            <button
+                data-test="start-btn"
+                onClick={() => setChangeScreen(true)}
+                >Iniciar Recall!</button>
         </SCstart>
     );
 }
