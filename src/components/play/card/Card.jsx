@@ -50,10 +50,27 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
         }
     }
 
+    function stageDataTest(){
+        if (playStage === 0){
+            return 'play-btn';
+        } else if (playStage === 1){
+            return 'turn-btn';
+        } else if (playStage === 3){
+            if (answerIcon === erro){
+                return 'no-icon';
+            } else if (answerIcon === quase){
+                return 'zap-icon';
+            } else {
+                return 'partial-icon';
+            }
+        }
+    }
+
     return(
         <SCcard stage={playStage} answer={answerText}>
             <p>{questionP}</p>
             <img
+                data-test={stageDataTest()}
                 onClick={playStage === 3 ? undefined : changePlayStage}
                 src={playStage === 3 ? answerIcon : questionIcon}
                 alt={playStage === 2 ? undefined : 'icon'}
