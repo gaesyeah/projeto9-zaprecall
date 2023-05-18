@@ -60,7 +60,7 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
                 return 'no-icon';
             } else if (answerIcon === quase){
                 return 'zap-icon';
-            } else {
+            } else if (answerIcon === certo){
                 return 'partial-icon';
             }
         }
