@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import setaPlay from '../../../assets/seta_play.png'
 import setaVirar from '../../../assets/seta_virar.png'
-import certo from '../../../assets/icone_certo.png'
-import quase from '../../../assets/icone_quase.png'
 import erro from '../../../assets/icone_erro.png'
+import quase from '../../../assets/icone_quase.png'
+import certo from '../../../assets/icone_certo.png'
 import SCcard from './Styled'
 
 function Card({card, index, arrAnswer, setArrAnswer}) {
@@ -32,15 +32,19 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
         setPlayStage(playStage + 1);
         setCardText(`Pergunta ${index+1}`);
 
-        //o id contem a variavel que guarda a imagem/icone equivalente ao botão clicado pelo usuario
-        const id = event.target.getAttribute('id');
-        setAnswerIcon(id);
-        setArrAnswer([...arrAnswer,id]);
-        if (id === erro){
+        //a const text contem o texto do botão clicado pelo usuario
+        const text = event.target.textContent;
+        if (text === 'Não lembrei'){
+            setAnswerIcon(erro);
+            setArrAnswer([...arrAnswer,erro]);
             setTextColor('#FF3030');
-        }else if (id === quase){
+        }else if (text === 'Quase não lembrei'){
+            setAnswerIcon(quase);
+            setArrAnswer([...arrAnswer,quase]);
             setTextColor('#FF922E');
         } else {
+            setAnswerIcon(certo);
+            setArrAnswer([...arrAnswer,certo]);
             setTextColor('#2FBE34');
         }
     }
@@ -79,17 +83,14 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
             {playStage === 2 && (
                 <div>
                     <button
-                        id={erro}
                         onClick={userAnswer} 
                         data-test="no-btn"
                     >Não lembrei</button>
                     <button
-                        id={quase}
                         onClick={userAnswer}
                         data-test="partial-btn"
                     >Quase não lembrei</button>
                     <button
-                        id={certo}
                         onClick={userAnswer}
                         data-test="zap-btn"
                     >Zap!</button>
