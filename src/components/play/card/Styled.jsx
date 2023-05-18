@@ -13,8 +13,8 @@ const SCcard = styled.li`
         font-weight: ${({stage}) => (stage === 1 || stage === 2) ? '400' : '700'};
         font-size: ${({stage}) => (stage === 1 || stage === 2) ? '18px' : '16px'};
         line-height: ${({stage}) => (stage === 1 || stage === 2) ? '22px' : '19px'};
-        text-decoration-line: ${({answer}) => (answer ===  '#333333') ? 'none' : 'line-through'};
-        color: ${({answer}) => answer};
+        text-decoration-line: ${({color}) => (color ===  '#333333') ? 'none' : 'line-through'};
+        color: ${({color}) => color};
         margin-left: 15px;
         margin-top: ${({stage}) => (stage === 1 || stage === 2) ? '18px' : '23px'};
         margin-bottom: ${({stage}) => (stage === 2) ? '22px' : '0px'};

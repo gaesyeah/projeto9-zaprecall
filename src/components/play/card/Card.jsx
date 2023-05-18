@@ -10,20 +10,20 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
 
     const [playStage, setPlayStage] = useState(0); //variavel para verificar se o usuario começou a jogar/respondeu/não respondeu
     const [answerIcon, setAnswerIcon] = useState(undefined); //variavel para alterar o icone da resposta após o usuario responder
-    const [answerText, setAnswerText] = useState('#333333') //variavel para alterar o css do "pergunta x" após o usuario responder, baseado na resposta
+    const [textColor, setTextColor] = useState('#333333') //variavel para alterar o css do "pergunta x" após o usuario responder, baseado na resposta
 
     const [questionIcon, setQuestionIcon] = useState(setaPlay); //variavel para alterar o icone dos cards, com base no "estagio" do mesmo
-    const [questionP, setQuestionP] = useState(`Pergunta ${index+1}`); //variavel para alterar o conteudo do texto dos cards, com base no "estagio" do mesmo
+    const [questionText, setQuestionText] = useState(`Pergunta ${index+1}`); //variavel para alterar o conteudo do texto dos cards, com base no "estagio" do mesmo
 
     function changePlayStage(){
         const count = playStage + 1;
         setPlayStage(count);
 
         if (count === 1){
-            setQuestionP(card.question);
+            setQuestionText(card.question);
             setQuestionIcon(setaVirar);
         } else if (count === 2){
-            setQuestionP(card.answer);
+            setQuestionText(card.answer);
             setQuestionIcon(undefined);
         }
     }
@@ -31,21 +31,21 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
     function userAnswer(event) {
         //altera a variavel para que todos os switch case entrem no default, voltando para o estado inicial da <li>, que antes era 0
         setPlayStage(playStage + 1);
-        setQuestionP(`Pergunta ${index+1}`);
+        setQuestionText(`Pergunta ${index+1}`);
 
         //altera o icone baseado na resposta
         const text = event.target.textContent;
         if (text === 'Não lembrei'){
             setAnswerIcon(erro);
-            setAnswerText('#FF3030');
+            setTextColor('#FF3030');
             setArrAnswer([...arrAnswer,erro]);
         }else if (text === 'Quase não lembrei'){
             setAnswerIcon(quase);
-            setAnswerText('#FF922E');
+            setTextColor('#FF922E');
             setArrAnswer([...arrAnswer,quase]);
         } else {
             setAnswerIcon(certo);
-            setAnswerText('#2FBE34');
+            setTextColor('#2FBE34');
             setArrAnswer([...arrAnswer,certo]);
         }
     }
@@ -67,8 +67,8 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
     }
 
     return(
-        <SCcard stage={playStage} answer={answerText}>
-            <p>{questionP}</p>
+        <SCcard stage={playStage} color={textColor}>
+            <p>{questionText}</p>
             <img
                 data-test={stageDataTest()}
                 onClick={playStage === 3 ? undefined : changePlayStage}
