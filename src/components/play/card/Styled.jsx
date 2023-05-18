@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled } from "styled-components"
 
 const SCcard = styled.li`
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);

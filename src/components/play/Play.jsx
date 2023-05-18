@@ -2,7 +2,7 @@ import { useState } from 'react'
 import randomizedCards from '../play/card/cards'
 import logo from '../../assets/logo.png'
 import erro from '../../assets/icone_erro.png'
-import { SCplay, SCscore } from './styled'
+import { SCplay, SCscore } from './Styled'
 import Card from '../play/card/Card'
 import ScoreList from './score/ScoreList'
 

@@ -4,7 +4,7 @@ import setaVirar from '../../../assets/seta_virar.png'
 import certo from '../../../assets/icone_certo.png'
 import quase from '../../../assets/icone_quase.png'
 import erro from '../../../assets/icone_erro.png'
-import SCcard from './styled'
+import SCcard from './Styled'
 
 function Card({card, index, arrAnswer, setArrAnswer}) {
 

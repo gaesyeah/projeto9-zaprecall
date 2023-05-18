@@ -1,5 +1,5 @@
 import logo from '../../assets/logo.png'
-import SCstart from './syled';
+import SCstart from './Styled'
 
 function Start({setChangeScreen}) {
     return(

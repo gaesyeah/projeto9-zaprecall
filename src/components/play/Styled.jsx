@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled } from "styled-components"
 
 export const SCplay = styled.div`
     background-color: #FB6B6B;
