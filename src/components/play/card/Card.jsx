@@ -59,9 +59,9 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
             if (answerIcon === erro){
                 return 'no-icon';
             } else if (answerIcon === quase){
-                return 'zap-icon';
-            } else if (answerIcon === certo){
                 return 'partial-icon';
+            } else if (answerIcon === certo){
+                return 'zap-icon';
             }
         }
     }
