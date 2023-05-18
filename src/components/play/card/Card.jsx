@@ -9,11 +9,11 @@ import SCcard from './Styled'
 function Card({card, index, arrAnswer, setArrAnswer}) {
 
     const [playStage, setPlayStage] = useState(0); //variavel para verificar se o usuario começou a jogar/respondeu/não respondeu
-    const [answerIcon, setAnswerIcon] = useState(undefined); //variavel para alterar o icone da resposta após o usuario responder
-    const [textColor, setTextColor] = useState('#333333') //variavel para alterar o css do "pergunta x" após o usuario responder, baseado na resposta
 
-    const [questionIcon, setQuestionIcon] = useState(setaPlay); //variavel para alterar o icone dos cards, com base no "estagio" do mesmo
     const [questionText, setQuestionText] = useState(`Pergunta ${index+1}`); //variavel para alterar o conteudo do texto dos cards, com base no "estagio" do mesmo
+    const [textColor, setTextColor] = useState('#333333') //variavel para alterar o css do "pergunta x" após o usuario responder, baseado na resposta
+    const [questionIcon, setQuestionIcon] = useState(setaPlay); //variavel para alterar o icone dos cards, com base no "estagio" do mesmo
+    const [answerIcon, setAnswerIcon] = useState(undefined); //variavel para alterar o icone da resposta após o usuario responder
 
     function changePlayStage(){
         const count = playStage + 1;
@@ -29,24 +29,19 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
     }
 
     function userAnswer(event) {
-        //altera a variavel para que todos os switch case entrem no default, voltando para o estado inicial da <li>, que antes era 0
         setPlayStage(playStage + 1);
         setQuestionText(`Pergunta ${index+1}`);
 
-        //altera o icone baseado na resposta
-        const text = event.target.textContent;
-        if (text === 'Não lembrei'){
-            setAnswerIcon(erro);
+        //o id contem a variavel que guarda a imagem/icone equivalente ao botão clicado pelo usuario
+        const id = event.target.getAttribute('id');
+        setAnswerIcon(id);
+        setArrAnswer([...arrAnswer,id]);
+        if (id === erro){
             setTextColor('#FF3030');
-            setArrAnswer([...arrAnswer,erro]);
-        }else if (text === 'Quase não lembrei'){
-            setAnswerIcon(quase);
+        }else if (id === quase){
             setTextColor('#FF922E');
-            setArrAnswer([...arrAnswer,quase]);
         } else {
-            setAnswerIcon(certo);
             setTextColor('#2FBE34');
-            setArrAnswer([...arrAnswer,certo]);
         }
     }
 
@@ -83,15 +78,18 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
             />
             {playStage === 2 && (
                 <div>
-                    <button 
+                    <button
+                        id={erro}
                         onClick={userAnswer} 
                         data-test="no-btn"
                     >Não lembrei</button>
                     <button
+                        id={quase}
                         onClick={userAnswer}
                         data-test="partial-btn"
                     >Quase não lembrei</button>
-                    <button 
+                    <button
+                        id={certo}
                         onClick={userAnswer}
                         data-test="zap-btn"
                     >Zap!</button>
