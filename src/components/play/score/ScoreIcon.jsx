@@ -1,7 +1,7 @@
 import erro from '../../../assets/icone_erro.png'
 import quase from '../../../assets/icone_quase.png'
 
-function ScoreList({image}) {
+function ScoreIcon({image}) {
 
     function scoreDataTest(){
         if (image === erro){
@@ -22,4 +22,4 @@ function ScoreList({image}) {
         );
 }
 
-export default ScoreList
+export default ScoreIcon
