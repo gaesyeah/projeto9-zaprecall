@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Start from './start/Start'
-import Play from './play/Play';
+import Play from './play/Play'
 
 function App() {
 

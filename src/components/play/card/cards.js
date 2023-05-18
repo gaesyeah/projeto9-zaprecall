@@ -10,4 +10,4 @@ const cards = [
 ]
 const randomizedCards = cards.sort(() => Math.random() - 0.5);
 
-export default randomizedCards;
+export default randomizedCards
