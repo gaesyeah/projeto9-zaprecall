@@ -54,7 +54,8 @@ function Play() {
                                     ?
                                     `Você não lembrou de ${wrongAnswers()}... Mas não desanime!` 
                                     : 
-                                    'Você não lembrou de nenhum, estude mais!'}
+                                    'Você não lembrou de nenhum, estude mais!'
+                                }
                                 </p>
                             </>
                         }
