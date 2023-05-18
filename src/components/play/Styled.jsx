@@ -57,7 +57,7 @@ export const SCscore = styled.div`
             font-size: 18px;
             line-height: 22px;
             margin-bottom: 14px;
-            font-weight: 400;
+            font-weight: 700;
             span{
                 font-size: 23px;
                 margin-right: 5px;
@@ -66,7 +66,7 @@ export const SCscore = styled.div`
         p:last-child{
             width: 222px;
             text-align: center;
-            font-weight: 700;
+            font-weight: 400;
         }
     }
     p{
