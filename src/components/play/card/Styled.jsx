@@ -2,9 +2,9 @@ import { styled } from "styled-components"
 
 const SCcard = styled.li`
     *{
-        transition: 400ms;
+        transition: 400ms, margin-left 0ms, font-size 0ms;
     }
-    transition: 400ms;
+    transition: height 400ms;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     display: flex;

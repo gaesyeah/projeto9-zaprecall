@@ -36,6 +36,7 @@ export const SCplay = styled.div`
 `;
 
 export const SCscore = styled.div`
+    transition: height 300ms;
     display: flex;
     flex-direction: column;
     align-items: center;
