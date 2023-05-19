@@ -1,12 +1,13 @@
 import { useState } from 'react'
-import randomizedCards from '../play/card/cards'
 import logo from '../../assets/logo.png'
 import erro from '../../assets/icone_erro.png'
 import { SCplay, SCscore } from './Styled'
 import Card from '../play/card/Card'
 import ScoreIcon from './score/ScoreIcon'
 
-function Play() {
+function Play({randomizedCards}) {
+    
+    const [arrAnswer, setArrAnswer] = useState([]); //variavel que guarda a quantidade de vezes que o usuario jogou, e se acertou, errou ou quase acertou
 
     //retorna uma comparação, para verificar se todos os cards já foram respondidos
     function allAnswered() {
@@ -17,11 +18,9 @@ function Play() {
         return arrAnswer.filter(icon => (icon === erro) && icon).length;
     }
 
-    const [arrAnswer, setArrAnswer] = useState([]); //variavel que guarda a quantidade de vezes que o usuario jogou, e se acertou, errou ou quase acertou
-
     return (
         <SCplay>
-            <div>
+            <div onClick={() => window.location.reload()}>
                 <img src={logo} alt='logo' />
                 <h2>ZapRecall</h2>
             </div>

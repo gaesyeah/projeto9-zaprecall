@@ -5,14 +5,18 @@ import Play from './play/Play'
 function App() {
 
   const [changeScreen, setChangeScreen] = useState(false);
+  const [randomizedCards, setRandomizedCards] = useState([]);
 
   return (
     <>
       {!changeScreen
         ?
-        <Start setChangeScreen={setChangeScreen} />
+        <Start 
+          setChangeScreen={setChangeScreen}
+          setRandomizedCards={setRandomizedCards}
+        />
         :
-        <Play />
+        <Play randomizedCards={randomizedCards}/>
       }
     </>
   )

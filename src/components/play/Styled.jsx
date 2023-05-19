@@ -6,6 +6,7 @@ export const SCplay = styled.div`
     flex-direction: column;
     align-items: center;
     div:nth-child(1){
+        cursor: pointer;
         display: flex;
         justify-content: center;
         margin-top: 50px;
