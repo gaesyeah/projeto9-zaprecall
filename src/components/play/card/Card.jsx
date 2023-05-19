@@ -83,7 +83,8 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
                     alt='icon'
                 />
             }
-            {playStage === 2 && (
+            {playStage === 2 
+                && 
                 <div>
                     <button
                         onClick={userAnswer} 
@@ -98,7 +99,7 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
                         data-test="zap-btn"
                     >Zap!</button>
                 </div>
-            )}
+            }
         </SCcard>
     );
 }
