@@ -29,10 +29,7 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
     }
 
     function userAnswer(answer) {
-        setPlayStage(playStage + 1);
-        setCardText(`Pergunta ${index+1}`);
-        setAnswerIcon(answer);
-        
+
         setArrAnswer([...arrAnswer,answer]);
 
         if (answer === erro){
@@ -42,6 +39,11 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
         } else {
             setTextColor('#2FBE34');
         }
+
+        setAnswerIcon(answer);
+        
+        setCardText(`Pergunta ${index+1}`);
+        setPlayStage(playStage + 1);
     }
 
     function stageDataTest(){
