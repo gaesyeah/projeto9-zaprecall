@@ -29,7 +29,7 @@ const SCcard = styled.li`
         position: ${({stage}) => (stage === 1) ? 'absolute' : undefined};
         margin-top: ${({stage}) => (stage === 1) ? '105px' : '20px'};
         margin-left: ${({stage}) => (stage === 1) ? '254px' : '163px'};
-        width: 'auto';
+        width: auto;
         height: ${({stage}) => (stage === 1) ? 'auto' : '23px'};
     }
     div{
