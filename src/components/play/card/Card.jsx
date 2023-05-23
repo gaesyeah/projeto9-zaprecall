@@ -28,20 +28,12 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
         }
     }
 
-    function userAnswer(answer) {
-
-        setArrAnswer([...arrAnswer,answer]);
-
-        if (answer === erro){
-            setTextColor('#FF3030');
-        }else if (answer === quase){
-            setTextColor('#FF922E');
-        } else {
-            setTextColor('#2FBE34');
-        }
-
-        setAnswerIcon(answer);
+    function userAnswer(icon, color) {
+        setArrAnswer([...arrAnswer, icon]);
         
+        setAnswerIcon(icon);
+        setTextColor(color);
+
         setCardText(`Pergunta ${index+1}`);
         setPlayStage(playStage + 1);
     }
@@ -84,15 +76,15 @@ function Card({card, index, arrAnswer, setArrAnswer}) {
                 && 
                 <div>
                     <button
-                        onClick={() => userAnswer(erro)} 
+                        onClick={() => userAnswer(erro, '#FF3030')} 
                         data-test="no-btn"
                     >Não lembrei</button>
                     <button
-                        onClick={() => userAnswer(quase)}
+                        onClick={() => userAnswer(quase, '#FF922E')}
                         data-test="partial-btn"
                     >Quase não lembrei</button>
                     <button
-                        onClick={() => userAnswer(certo)}
+                        onClick={() => userAnswer(certo, '#2FBE34')}
                         data-test="zap-btn"
                     >Zap!</button>
                 </div>
